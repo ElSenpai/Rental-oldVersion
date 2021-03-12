@@ -1,8 +1,15 @@
-<table class="table-danger bg-danger">
-    <tr *ngFor="let customer of customers">
-        <td>{{customer.id}}</td>
-        <td>{{customer.userId}}</td>
-        <td>{{customer.companyName}}</td>
-    </tr>
-    
-</table>
+
+<table class="table table-danger">
+    <thead>
+      <tr>
+        <th scope="col">Customers</th>
+        <th scope="col"></th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">       
+        <td>{{customer.userId}}</td> 
+        <td>{{customer.companyName}}</td>        
+      </tr>    
+    </tbody>
+  </table>

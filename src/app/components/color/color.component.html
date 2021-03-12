@@ -1,6 +1,14 @@
-<table class="table-danger bg-danger">
-    <tr *ngFor="let color of colors">
-        <td>{{color.id}}</td>
-        <td>{{color.colorName}}</td>
-    </tr>
-</table>
+<table class="table table-danger">
+    <thead>
+      <tr>
+        <th scope="col">Colors</th>
+        <th scope="col"></th>       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let color of colors">
+        <th scope="row">*</th>
+        <td>{{color.colorName}}</td>        
+      </tr>    
+    </tbody>
+  </table>
