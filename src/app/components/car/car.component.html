@@ -1,16 +1,21 @@
-<table class="table table-dark table-striped bg-dark">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Model</th>
-      <th>Renk</th>
-      <th>Fiyat</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let cardto of cardtos">
-    <td>{{cardto.carId}}</td>
-    <td>{{cardto.brandName}}</td>
-    <td>{{cardto.colorName}}</td>
-    <td>{{cardto.dailyPrice}}</td>
-  </tr>
-</table>
+<div class="fresh-table full-color-orange full-screen-table ">
+  <table id="fresh-table" class="table table-dark table-striped bg-dark">
+    <thead>
+      <tr>
+        <th data-field="id">Id</th>
+        <th data-field="name">Model</th>
+        <th data-field="renk">Renk</th>
+        <th data-field="fiyat">Fiyat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cardto of cardtos">
+        <td>{{cardto.carId}}</td>
+        <td>{{cardto.brandName}}</td>
+        <td>{{cardto.colorName}}</td>
+        <td>{{cardto.dailyPrice}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

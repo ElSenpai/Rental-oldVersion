@@ -14,6 +14,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { UseroperationclaimComponent } from './components/useroperationclaim/useroperationclaim.component';
 import { OperationclaimComponent } from './components/operationclaim/operationclaim.component';
 import { NaviComponent } from './components/navi/navi.component';
+import { CardetailComponent } from './components/cardetail/cardetail.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { NaviComponent } from './components/navi/navi.component';
     UseroperationclaimComponent,
     OperationclaimComponent,
     NaviComponent,
+    CardetailComponent,
   ],
   imports: [
     BrowserModule,

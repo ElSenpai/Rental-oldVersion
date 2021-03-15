@@ -2,13 +2,16 @@
     <thead>
       <tr>
         <th scope="col">Colors</th>
-        <th scope="col"></th>       
+         
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let color of colors">
-        <th scope="row">*</th>
-        <td>{{color.colorName}}</td>        
+    
+        <td (click)="setCurrentColor(color)" 
+        routerLink="cardetails/color/{{color.id}}"
+         [class]="getCurrentColorClass(color)" 
+          >{{color.colorName}}</td>        
       </tr>    
     </tbody>
   </table>

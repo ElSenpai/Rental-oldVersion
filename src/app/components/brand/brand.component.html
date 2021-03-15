@@ -1,14 +1,17 @@
-<table class="table table-danger">
+<table class="table table-danger " >
     <thead>
       <tr>
-        <th scope="col">Brands</th>
-        <th scope="col"></th>       
+        <th scope="top">Brands</th>
+              
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let brand of brands">
-        <th scope="row">*</th>
-        <td>{{brand.brandName}}</td>        
+      <tr   *ngFor="let brand of brands">
+        
+        <td (click)="setCurrentBrand(brand)" routerLink="cardetails/brand/{{brand.id}}"
+        [class]="getCurrentBrandClass(brand)" >{{brand.brandName}}</td>        
       </tr>    
     </tbody>
   </table>
+
+  <h5 *ngIf="currentBrand" >{{currentBrand.brandName}}</h5>

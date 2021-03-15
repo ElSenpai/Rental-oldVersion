@@ -3,4 +3,7 @@ export interface CarDto{
     brandName:string;
     colorName:string;
     dailyPrice:number;
+   
+    brandId:number;
+    colorId:number;
 }

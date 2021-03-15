@@ -1,1 +1,7 @@
-<p>carimage works!</p>
+<div class="card" *ngFor="let image of carimages" style="width: 33rem; background-color: rgb(219, 178, 197);">
+    <img src="https://localhost:44310/images/{{image.imagePath}}" class="card-img-top" alt="...">
+    <div class="card-body row">
+      
+        <a href="#" class="btn btn-dark">Geri Dön</a>
+    </div>
+</div>

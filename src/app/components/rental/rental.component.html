@@ -1,20 +1,22 @@
-<table class="table table-dark table-striped bg-dark">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Customer</th>
-      <th>Model</th>
-      <th>Alım</th>
-      <th>Teslim</th>
-    
-    </tr>
-  </thead>
+
+<div class="fresh-table full-color-orange full-screen-table ">
+<table id="fresh-table" class="table table-dark table-striped bg-dark">
+<thead>
+  <th data-field="id">Id</th>
+  <th data-field="name">Customer</th>
+  <th data-field="model">Model</th>
+  <th data-field="alim">Alım</th>
+  <th data-field="teslim">Teslim</th>
+</thead>
+<tbody>
   <tr *ngFor="let rentaldto of rentaldtos">
     <td>{{rentaldto.rentId}}</td>   
     <td>{{rentaldto.userName}}</td>
     <td>{{rentaldto.brandName}}</td>
-    <td>{{rentaldto.rentDate}}</td>
+    <td>12.03.2021  13:45</td>
     <td>{{rentaldto.returnDate}}</td>
-
   </tr>
+</tbody>
+
 </table>
+</div>
