@@ -1,7 +1,32 @@
-<div class="card" *ngFor="let image of carimages" style="width: 33rem; background-color: rgb(219, 178, 197);">
-    <img src="https://localhost:44310/images/{{image.imagePath}}" class="card-img-top" alt="...">
+
+
+<!-- <div class="carousel slide border border-dark" data-ride="carousel" style="width: 33rem; background-color: rgb(0, 0, 0);">
+    <div class="carousel-item " *ngFor="let image of carimages;  index as i; first as firstImage "  [ngClass]="{ active: firstImage }" ></div>
+    <img src="https://localhost:44310/images/{{image.imagePath}}" class="card-img-top" alt="First Slide">
     <div class="card-body row">
       
         <a href="#" class="btn btn-dark">Geri Dön</a>
     </div>
 </div>
+</div> --><a href="#" class="btn btn-dark" >Geri Dön</a>
+  <div id="carouselExampleControls" 
+  
+   class="carousel slide border border-dark" data-bs-ride="carousel">
+    <div class="carousel-inner">
+       
+      <div class="carousel-item " *ngFor="let image of carimages;  index as i; first as firstImage "  [ngClass]="{ active: firstImage }" >
+        <img src="https://localhost:44310/images/{{image.imagePath}}" class="d-block w-100" alt="image.imagePath">
+         
+   </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+      
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+   
+  </div>  
+ 

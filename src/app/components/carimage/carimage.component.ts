@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Carimage } from 'src/app/models/entities/carimage';
 import { CarimageService } from 'src/app/services/carimage.service';
+import { __param } from 'tslib';
 
 @Component({
   selector: 'app-carimage',
@@ -12,6 +13,7 @@ export class CarimageComponent implements OnInit {
 
   carimages:Carimage[]=[];
   currentCarImage:Carimage;
+  
   constructor(private carimageService:CarimageService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -36,4 +38,9 @@ export class CarimageComponent implements OnInit {
   setCurrentCarImage(carimage:Carimage){
     this.currentCarImage=carimage;
   }
+  trackByFn(carId:string) {
+    return carId=this.carimages[0].imagePath;
+  }
+  
+  
 }
