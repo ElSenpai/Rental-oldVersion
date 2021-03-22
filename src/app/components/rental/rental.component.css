@@ -43,3 +43,4 @@ body{
 .description-footer > div{
     display: inline-block;
 }
+#circle{ background-color:green; border-radius:50%; height:15px; width:15px;}

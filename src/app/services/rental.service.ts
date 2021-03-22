@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { RentalDto } from '../models/dto/rentalDto';
 import { Rental } from '../models/entities/rental';
 import { ListResponseModel } from '../models/response/listResponseModel';
+import { ResponseModel } from '../models/response/responseModel';
 
 
 
@@ -12,13 +13,19 @@ import { ListResponseModel } from '../models/response/listResponseModel';
 })
 export class RentalService {
 
-  apiUrl='https://localhost:44310/api/rentals/getall';
-  apiUrldto='https://localhost:44310/api/rentals/getdetail';
+  apiUrl='https://localhost:44310/api/';
+ 
   constructor(private httpClient:HttpClient) { }
   getRentals():Observable<ListResponseModel<Rental>>{
-    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl);
+    let newPath=this.apiUrl+"rentals/getall"
+    return this.httpClient.get<ListResponseModel<Rental>>(newPath);
   }
   getRentalDetails():Observable<ListResponseModel<RentalDto>>{
-    return this.httpClient.get<ListResponseModel<RentalDto>>(this.apiUrldto);
+    let newPath=this.apiUrl+"rentals/getdetail"
+    return this.httpClient.get<ListResponseModel<RentalDto>>(newPath);
+  }
+  RentAdd(rental:Rental):Observable<ResponseModel>{
+    let newPath=this.apiUrl+"rentals/add"
+    return this.httpClient.post<ResponseModel>(newPath,rental);
   }
 }

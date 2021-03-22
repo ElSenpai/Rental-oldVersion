@@ -1,16 +1,24 @@
-<table class="table table-danger " >
+ 
+
+<table class="table  " >
     <thead>
       <tr>
-        <th scope="top">Brands</th>
-              
+        <td class="mb-3" >
+  <input type="text" [(ngModel)]="filterBrandText" class="form-control" id="filterBrandText" 
+  placeholder="Brand Search">
+</td>        
       </tr>
     </thead>
-    <tbody>
-      <tr   *ngFor="let brand of brands">
+    <select class="form-select " aria-label="Default select example ">
+      <option  class="form-select" *ngFor="let brand of brands | filterBrand:filterBrandText  "  >
+
         
+       
         <td (click)="setCurrentBrand(brand)" routerLink="cardetails/brand/{{brand.id}}"
         [class]="getCurrentBrandClass(brand)" >{{brand.brandName}}</td>        
-      </tr>    
-    </tbody>
-  </table>
-
+      </option>    
+    </select>
+  </table>  
+  <!-- <select [(ngModel)]="filterBrandText"  class="form-select" aria-label="Default select example">
+    <option *ngFor="let brand of brands" [value]="brand.id" selected="{{getSelectedBrand(brand.id)}}">{{brand.brandName}}</option>
+  </select> -->

@@ -1,0 +1,76 @@
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#creditcard"
+>
+  Kirala 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="creditcard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="creditcard"> Kirala</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-9" >
+          <div class="col">
+            <!-- <label for="customerId" >Müşteri No</label>
+            <div class="row">
+              <input
+                  [(ngModel)] = "customerId"
+                  class="form-control"
+                  type="number"
+                  value=""
+                  id="customerId"
+                  required
+                />
+            </div> -->
+             <div class="row">
+              <label for="cardNumber">Kart No</label>
+              <input
+                  [(ngModel)] = "cardNumber"
+                  class="form-control"
+                  type="text"
+                  value=""
+                  id="cardNumber"
+                />
+            </div> 
+            <div class="row">
+                <label for="cardPassword">Password</label>
+                <input
+                    [(ngModel)] = "cardPassword"
+                    class="form-control"
+                    type="text"
+                    value=""
+                    id="cardPassword"
+                  />
+              </div>
+              
+          </div>
+          <div class="form-row">
+            <label for="select_customer">
+              Please select customer</label
+            >
+            <select
+              id="select_customer"
+              class="custom-select"
+              [(ngModel)]="customerId"
+              aria-placeholder="All Customers"
+              type="number"
+            >
+              <option *ngFor="let customer of customers" type="number" [value]="customer.id">
+                {{customer.companyName}}
+              </option>
+            </select>
+          </div> 
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-warning" name="isCheck" ngDefaultControl (click)="Payment()">  Ödeme Yap</button>
+        <app-rental   *ngIf="isCheck" [carForRent] = "cardto" ></app-rental>
+      </div>
+    </div>
+  </div>
+</div>

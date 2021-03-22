@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CarDto } from 'src/app/models/dto/carDto';
-import { Car } from 'src/app/models/entities/car';
+import { Brand } from 'src/app/models/entities/brand';
+
+import { Color } from 'src/app/models/entities/color';
+import { BrandService } from 'src/app/services/brand.service';
 import { CarService } from 'src/app/services/car.service';
+import { ColorService } from 'src/app/services/color.service';
 
 @Component({
   selector: 'app-car',
@@ -9,25 +13,39 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
- cars:Car[]=[];
- cardtos:CarDto[]=[];
+  brands: Brand[] = [];
+  colors: Color[] = [];
+  brandFilter: number;
+  colorFilter: number;
 
-  constructor(private carService:CarService) { }
+  constructor(private brandService:BrandService,private colorService:ColorService) { }
 
   ngOnInit(): void {
-    this.getCarDetails();
-    this.getCars();
+    this.getBrands();
+    this.getColors();
   }
 
-  getCarDetails(){
-    this.carService.getCarDetails().subscribe(response=>{
-      this.cardtos=response.data
+  getBrands(){
+    this.brandService.getBrands().subscribe(response=>{
+      this.brands=response.data
     })
   }
-  getCars(){
-    this.carService.getCars().subscribe(response=>{
-      this.cars=response.data
+  getColors(){
+    this.colorService.getColors().subscribe(response=>{
+      this.colors=response.data
     })
+  }
+  getSelectedBrand(brandId: number) {
+    if (this.brandFilter == brandId)
+      return true;
+    else
+      return false;
+  }
+  getSelectedColor(colorId: number) {
+    if (this.colorFilter == colorId)
+      return true;
+    else
+      return false;
   }
 
 }

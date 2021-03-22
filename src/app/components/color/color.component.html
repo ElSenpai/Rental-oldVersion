@@ -1,17 +1,24 @@
-<table class="table table-danger">
-    <thead>
-      <tr>
-        <th scope="col">Colors</th>
-         
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let color of colors">
-    
-        <td (click)="setCurrentColor(color)" 
-        routerLink="cardetails/color/{{color.id}}"
-         [class]="getCurrentColorClass(color)" 
-          >{{color.colorName}}</td>        
-      </tr>    
-    </tbody>
-  </table>
+<table class="table ">
+  <thead>
+    <tr>
+
+      <td class="mb-3">
+        <input type="text" [(ngModel)]="filterColorText" class="form-control" id="filterColorText"
+          placeholder="Color Search">
+      </td>
+
+    </tr>
+  </thead>
+
+
+  <select class="form-select " aria-label="Default select example ">
+    <option class="form-select" *ngFor="let color of colors | filterColor:filterColorText ">
+      <td 
+        >{{color.colorName}} <span [class]="getCurrentColorClass(color)" 
+        (click)="setCurrentColor(color)"  routerLink="cardetails/color/{{color.id}}" 
+        class="badge bg-danger"></span></td>
+    </option>
+  </select>
+
+</table> 
+

@@ -1,20 +1,10 @@
-
-
-<!-- <div class="carousel slide border border-dark" data-ride="carousel" style="width: 33rem; background-color: rgb(0, 0, 0);">
-    <div class="carousel-item " *ngFor="let image of carimages;  index as i; first as firstImage "  [ngClass]="{ active: firstImage }" ></div>
-    <img src="https://localhost:44310/images/{{image.imagePath}}" class="card-img-top" alt="First Slide">
-    <div class="card-body row">
-      
-        <a href="#" class="btn btn-dark">Geri Dön</a>
-    </div>
-</div>
-</div> --><a href="#" class="btn btn-dark" >Geri Dön</a>
+<a href="#"  class="btn btn-dark" >Geri Dön</a> <app-payment [carForRent] = "cardto" ></app-payment>  
   <div id="carouselExampleControls" 
   
    class="carousel slide border border-dark" data-bs-ride="carousel">
     <div class="carousel-inner">
        
-      <div class="carousel-item " *ngFor="let image of carimages;  index as i; first as firstImage "  [ngClass]="{ active: firstImage }" >
+      <div class="carousel-item " *ngFor="let image of carimages;  index as i; first as firstImage " [ngClass]="{ active: firstImage }" >
         <img src="https://localhost:44310/images/{{image.imagePath}}" class="d-block w-100" alt="image.imagePath">
          
    </div>
@@ -29,4 +19,12 @@
     </button>
    
   </div>  
+
+  <ul *ngIf="cardto" class="list-group list-group-flush">
+    <li class="list-group-item">Brand Name: {{cardto.brandName }}</li>
+    <li class="list-group-item">Color Name: {{ cardto.colorName }}</li>
+    <li class="list-group-item">Name: {{ cardto.brandModel }}</li>
+    <li class="list-group-item">Daily Price: {{ cardto.dailyPrice }}</li>
+  </ul>
  
+  

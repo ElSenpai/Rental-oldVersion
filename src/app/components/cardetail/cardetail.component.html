@@ -1,22 +1,30 @@
+<app-car></app-car>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+    placeholder="Cars Search">
 <div class="fresh-table full-color-orange full-screen-table ">
 <table id="fresh-table" class="table table-dark table-striped bg-dark">
     <thead>
         <th data-field="id">Id</th>
         <th data-field="name">Model</th>
+        <th data-field="name">Name</th>
         <th data-field="Renk">Renk</th>
         <th data-field="alim">Fiyat</th>
         <th data-field="teslim"></th>
 
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
+        <tr *ngFor="let car of cars| filterCar:filterText  ">
             <td>{{car.carId}}</td>
            
             <td>{{car.brandName}}</td>
+            <td>{{car.brandModel}}</td>
             <td>{{car.colorName}}</td>
             <td>{{car.dailyPrice}}</td>
           <td><button  routerLink="carimages/car/{{car.carId}}"
-                 class="btn btn-danger" type="button">Resim</button></td>
+                 class="btn btn-primary" type="button">Detay</button></td>
+             
+                    
         </tr>
                     
     </tbody>

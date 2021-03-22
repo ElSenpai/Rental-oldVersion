@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CarDto } from 'src/app/models/dto/carDto';
+import { Brand } from 'src/app/models/entities/brand';
+import { Color } from 'src/app/models/entities/color';
+import { BrandService } from 'src/app/services/brand.service';
 import { CardetailService } from 'src/app/services/cardetail.service';
 
 @Component({
@@ -9,11 +12,11 @@ import { CardetailService } from 'src/app/services/cardetail.service';
   styleUrls: ['./cardetail.component.css']
 })
 export class CardetailComponent implements OnInit {
-
   
   cars:CarDto[]=[];
+  filterText="";
   
-  constructor(private cardetailService:CardetailService,private activatedRoute:ActivatedRoute) { }
+  constructor(private cardetailService:CardetailService,private activatedRoute:ActivatedRoute  , private brandService:BrandService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -22,8 +25,9 @@ export class CardetailComponent implements OnInit {
 
       } else if( params["colorId"]){
         this.getCarDetailColorId(params["colorId"])
-      }else {
-
+      }else if(params["brandId"] && params["colorId"]){
+       this.getBrandColorId(params["brandId"],params["colorId"])
+      }else{
         this.getCarDetails();
       }
     })
@@ -45,6 +49,14 @@ export class CardetailComponent implements OnInit {
       this.cars=response.data
     })
   }
+  getBrandColorId(brandId:number, colorId: number) {
+    this.cardetailService.getCarBrandColorId(brandId,colorId).subscribe(response => {
+      this.cars = response.data
+      
+      
+    })
+  }
+ 
   
 
   

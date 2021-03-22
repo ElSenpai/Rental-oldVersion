@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="fresh-table full-color-orange full-screen-table ">
 <table id="fresh-table" class="table table-dark table-striped bg-dark">
 <thead>
@@ -14,8 +14,84 @@
     <td>{{rentaldto.userName}}</td>
     <td>{{rentaldto.brandName}}</td>
     <td>12.03.2021  13:45</td>
-    <td>{{rentaldto.returnDate}}</td>
+    
+   
+   
   </tr>
 </tbody>
 </table>
+</div> 
+<div>
+  <div>
+    <select class="text" *ngFor="let rentaldto of rentaldtos">{{rentaldto.returnDate}}</select>
+  </div>
+</div> -->
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#carForRentx"
+>
+  Kirala 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="carForRentx" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Rent</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <h2>Lütfen Tarih belirleyiniz</h2>
+      <div class="modal-body">
+        <div class="col-md-9" >
+          <div class="col">
+            <label for="rent_date" >Rent Date</label>
+            <div class="row">
+              <input
+                  [(ngModel)] = "rentDate"
+                  class="form-control"
+                  type="datetime-local"
+                  value=""
+                  id="rent_date"
+                  required
+                />
+            </div>
+            <div class="row">
+              <label for="return_date">Return Date</label>
+              <input
+                  [(ngModel)] = "returnDate"
+                  class="form-control"
+                  type="datetime-local"
+                  value=""
+                  id="return_date"
+                />
+            </div>
+            
+          </div>
+          <div class="form-row">
+            <label for="select_customer">
+              Please select customer</label
+            >
+            <select
+              id="select_customer"
+              class="custom-select"
+              [(ngModel)]="customerId"
+              aria-placeholder="All Customers"
+              type="number"
+            >
+              <option *ngFor="let customer of customers" type="number" [value]="customer.id">
+                {{customer.companyName}}
+              </option>
+            </select>
+          </div> 
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vazgeç</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="RentAdd(carForRent.carId)">Ödeme Yap</button>
+      </div>
+    </div>
+  </div>
 </div>

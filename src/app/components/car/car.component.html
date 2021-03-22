@@ -1,21 +1,38 @@
-<div class="fresh-table full-color-orange full-screen-table ">
-  <table id="fresh-table" class="table table-dark table-striped bg-dark">
-    <thead>
-      <tr>
-        <th data-field="id">Id</th>
-        <th data-field="name">Model</th>
-        <th data-field="renk">Renk</th>
-        <th data-field="fiyat">Fiyat</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let cardto of cardtos">
-        <td>{{cardto.carId}}</td>
-        <td>{{cardto.brandName}}</td>
-        <td>{{cardto.colorName}}</td>
-        <td>{{cardto.dailyPrice}}</td>
-      </tr>
-    </tbody>
-  </table>
+ <div class="row mb-2">
+  <div class="col col-4">
+      <select [(ngModel)]="brandFilter"  class="form-select" aria-label="Default select example">
+          <option *ngFor="let brand of brands" [value]="brand.id" selected="{{getSelectedBrand(brand.id)}}">{{brand.brandName}}</option>
+        </select>
+  </div>
+  <div class="col col-4">
+      <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+          <option *ngFor="let color of colors" [value]="color.id" [selected]="getSelectedColor(color.id)"  >{{color.colorName}}</option>
+        </select>
+  </div>
+  <div class="col col-2">
+      <a 
+      routerLink="/cardetails/{{brandFilter}}/{{colorFilter}}" class="btn btn-warning">Filtrele</a>
+      </div>
+      <div class="col col-2">
+          <a 
+          routerLink="/cardetails" class="btn btn-danger">Temizle</a>
+      </div>
+</div>  
+<!-- <div class="row">
+    <div class="col-md-4">
+        <app-color></app-color>
+    </div>
+    <div class="col-md-4">
+        <app-brand></app-brand>
+    </div>
+    
+    <div class="col-md-2">
+        <div class="row" style="margin-bottom: 5px; margin-top: 7px;">
+            <a routerLink="/cardetails/{{brandFilter}}/{{colorFilter}}" class="btn btn-success">Filtrele</a>
+        </div>
 
-</div>
+        <div class="row ">
+            <a routerLink="" class="btn btn-danger">Temizle</a>
+        </div>
+    </div>
+</div>   -->
