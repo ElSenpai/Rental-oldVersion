@@ -15,8 +15,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class CarComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
-  brandFilter: number;
-  colorFilter: number;
+  
 
   constructor(private brandService:BrandService,private colorService:ColorService) { }
 
@@ -35,17 +34,6 @@ export class CarComponent implements OnInit {
       this.colors=response.data
     })
   }
-  getSelectedBrand(brandId: number) {
-    if (this.brandFilter == brandId)
-      return true;
-    else
-      return false;
-  }
-  getSelectedColor(colorId: number) {
-    if (this.colorFilter == colorId)
-      return true;
-    else
-      return false;
-  }
+  
 
 }
