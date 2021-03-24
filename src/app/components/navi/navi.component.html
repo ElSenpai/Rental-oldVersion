@@ -34,11 +34,15 @@
       </div>
     </div>
   </nav> -->
-  <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-        <img src="assets/img/123.png" height="40" class="p-mr-2">
-    </ng-template>
-    <ng-template pTemplate="end">
+  <p-menubar id="men" [model]="items"  >
+    <ng-template pTemplate="start" >
+     <img src="assets/img/123.png" height="55"  class="p-mr-2">
+        
+    
+    </ng-template  >
+       
+    <button pButton label="Home" routerLink="/" icon="pi pi-home"></button>
+    <!-- <ng-template pTemplate="end">
         <input type="text" pInputText placeholder="Search">
-    </ng-template>
+    </ng-template> -->
 </p-menubar>

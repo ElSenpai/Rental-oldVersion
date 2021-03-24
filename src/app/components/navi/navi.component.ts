@@ -12,16 +12,18 @@ export class NaviComponent implements OnInit {
 
   ngOnInit() {
       this.items = [
-          {
+          {  
               label:'Add',
               icon:'pi pi-plus-circle',
+             
               items:[
                   {
                       label:'New',
                       icon:'pi pi-fw pi-plus',
+                      
                       items:[
                       {
-                          label:'Araba',
+                          label:'Car',
                           icon:'pi pi-fw pi-plus',
                           routerLink:"car/add"
                       },
@@ -38,13 +40,15 @@ export class NaviComponent implements OnInit {
 
 
                       ]
+                  }, {
+                      separator: true
                   },
                   {
-                      label:'Update',
-                      icon:'pi pi-fw pi-undo',
-                      items:[
+                      label: 'Update',
+                      icon: 'pi pi-fw pi-undo',
+                      items: [
                         {
-                          label:'Araba',
+                          label:'Car',
                           icon:'pi pi-fw pi-plus',
                           routerLink:"car/update"
                       },
@@ -64,14 +68,15 @@ export class NaviComponent implements OnInit {
                       separator:true
                   },
                   {
-                      label:'Export',
-                      icon:'pi pi-fw pi-external-link'
+                      label:'Delete',
+                      icon:'pi pi-fw pi-trash'
                   }
               ]
           },
           
           {
               label:'Users',
+              
               icon:'pi pi-android',
               items:[
                   {

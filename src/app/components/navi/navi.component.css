@@ -1,14 +1,3 @@
-.navbar
-{
-margin-bottom: 30px; 
+[p-menubar]  {
+    margin-bottom: 25px;
 }
-.page-header.navbar .search-form .input-group .input-group-btn {
-    padding: 0;
-    margin: 0; }
-.btn{
-    background-color: rgb(2, 1, 1);
-   
-}
- .btn:hover{
-     background-color: rgb(226, 226, 226);
- }
