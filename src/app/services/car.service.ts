@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CarDto } from '../models/dto/carDto';
 import { Car } from '../models/entities/car';
 import { ListResponseModel } from '../models/response/listResponseModel';
+import { ResponseModel } from '../models/response/responseModel';
 ;
 
 
@@ -12,15 +13,22 @@ import { ListResponseModel } from '../models/response/listResponseModel';
 })
 export class CarService {
 
-  apiUrl='https://localhost:44310/api/cars/getall';
-  apiUrldto='https://localhost:44310/api/cars/getdetail';
+  apiUrl='https://localhost:44310/api/';
+  
   constructor(private httpClient:HttpClient) { }
   
   getCars():Observable<ListResponseModel<Car>>{
-    return this.httpClient.get<ListResponseModel<Car>>(this.apiUrl);
+    let newPath=this.apiUrl+"cars/getall"
+    return this.httpClient.get<ListResponseModel<Car>>(newPath);
   }
   getCarDetails():Observable<ListResponseModel<CarDto>>{
-    return this.httpClient.get<ListResponseModel<CarDto>>(this.apiUrldto);
+    let newPath=this.apiUrl+"cars/getdetail"
+    return this.httpClient.get<ListResponseModel<CarDto>>(newPath);
   }
-
+  add(car:Car):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/add",car)
+  }
+  update(car:Car):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"cars/update",car)
+  }
 }

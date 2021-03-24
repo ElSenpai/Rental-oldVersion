@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Rent a Car</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,4 +33,12 @@
         </form>
       </div>
     </div>
-  </nav>
+  </nav> -->
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <img src="assets/img/123.png" height="40" class="p-mr-2">
+    </ng-template>
+    <ng-template pTemplate="end">
+        <input type="text" pInputText placeholder="Search">
+    </ng-template>
+</p-menubar>

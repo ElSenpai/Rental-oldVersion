@@ -1,19 +1,24 @@
-
-<!-- <div class="row">
-    <div class="col-md-4">
-        <app-color></app-color>
+<!-- <div class="form-row align-items-center" >
+    <div class="col-md-12">
+      <label class="mr-sm-2" for="inlineFormCustomSelect"> Brands </label>
+      <input
+      [(ngModel)]="filterBrandText"
+      type="text"
+      class="form-control"
+      id="filterBrandText"
+      style="margin-bottom: 10px;"
+      placeholder="Brand Search"
+    />
+      <select class="custom-select custom-select-md mb-3" id="inlineFormCustomSelect" style="width: 250px;">
+        <option
+          (click)="setCurrentBrand(brand)"
+          routerLink="/cars/brand/{{brand.id}}"
+          *ngFor="let brand of brands | filterBrand:filterBrandText"
+          [class]="getCurrentBrandClass(brand)"
+        >
+        {{ brand.brandName }}
+        </option>
+        <option [class]="getAllBrandClass()" routerLink="/cars">View All </option>
+      </select>
     </div>
-    <div class="col-md-4">
-        <app-brand></app-brand>
-    </div>
-    
-    <div class="col-md-2">
-        <div class="row" style="margin-bottom: 5px; margin-top: 7px;">
-            <a routerLink="/cardetails/{{brandFilter}}/{{colorFilter}}" class="btn btn-success">Filtrele</a>
-        </div>
-
-        <div class="row ">
-            <a routerLink="" class="btn btn-danger">Temizle</a>
-        </div>
-    </div>
-</div>   -->
+  </div> -->

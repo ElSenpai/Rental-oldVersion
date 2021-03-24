@@ -1,0 +1,62 @@
+<div class="content">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Update Car</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="carUpdateForm">
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number" formControlName="id" id="id" pInputText>
+                            <label for="id">Car Id</label>
+                        </span>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number" formControlName="brandId" id="brandId" pInputText>
+                            <label for="brandId">Brand Id</label>
+                        </span>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number"  formControlName="colorId" id="colordId" pInputText>
+                            <label for="colordId">Color Id</label>
+                        </span>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number" formControlName="modelYear" id="modelYear" pInputText>
+                            <label for="modelYear">Yıl</label>
+                        </span>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text" formControlName="carName" id="carName" pInputText>
+                            <label for="carName">Araba</label>
+                        </span>
+                    </div>
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number" formControlName="dailyPrice" id="dailyPrice" pInputText>
+                            <label for="dailyPrice">Fiyat</label>
+                        </span>
+                    </div>
+            
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <button pButton pRipple type="button" label="Güncelle" (click)="update()" class="p-button-warning"></button>
+            
+
+        </div>
+    </div>
+
+</div>
+
+</div>

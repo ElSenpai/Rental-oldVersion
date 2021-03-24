@@ -15,6 +15,8 @@ import { ColorService } from 'src/app/services/color.service';
 export class CarComponent implements OnInit {
   brands: Brand[] = [];
   colors: Color[] = [];
+  filterBrandText="";
+  currentBrand: Brand;
   
 
   constructor(private brandService:BrandService,private colorService:ColorService) { }
@@ -33,6 +35,31 @@ export class CarComponent implements OnInit {
     this.colorService.getColors().subscribe(response=>{
       this.colors=response.data
     })
+  }
+  setCurrentBrand(brand:Brand){
+    this.currentBrand = brand;
+  }
+
+  getCurrentBrandClass(brand:Brand)
+  {
+    if(brand == this.currentBrand)
+    {
+      return "selected";
+    }
+    else{
+      return " ";
+    }
+  }
+
+  getAllBrandClass()
+  {
+    if(!this.currentBrand)
+    {
+      return "selected";
+    }
+    else{
+      return " ";
+    }
   }
   
 

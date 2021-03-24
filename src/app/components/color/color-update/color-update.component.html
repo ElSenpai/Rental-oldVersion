@@ -1,0 +1,39 @@
+<div class="content">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Color Update</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="colorUpdateForm">
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="number"  formControlName="id" id="id" pInputText>
+                            <label for="id">Id</label>
+                        </span>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text"  formControlName="colorName" id="colorName" pInputText>
+                            <label for="colorName">Name</label>
+                        </span>
+                    </div>
+
+                    
+            
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <button pButton pRipple type="button" label="güncelle" (click)="update()" class="p-button-warning"></button>
+            
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+

@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">New Brand</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="brandAddForm">
+
+ 
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text"  formControlName="brandName" id="brandName" pInputText>
+                            <label for="brandName">Name</label>
+                        </span>
+                    </div>
+
+                    
+            
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <button pButton pRipple type="button" label="Ekle" (click)="add()" class="p-button-success"></button>
+            
+
+        </div>
+    </div>
+
+</div>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="content">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">New Color</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="colorAddForm">
+
+ 
+
+                    <div class="p-field p-col-12 p-md-4">
+                        <span class="p-float-label">
+                            <input type="text"  formControlName="colorName" id="colorName" pInputText>
+                            <label for="colorName">Name</label>
+                        </span>
+                    </div>
+
+                    
+            
+
+            </form>
+        </div>
+        <div class="card-footer">
+            <button pButton pRipple type="button" label="Ekle" (click)="add()" class="p-button-success"></button>
+            
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+

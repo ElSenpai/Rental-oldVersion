@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-navi',
@@ -7,9 +8,108 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NaviComponent implements OnInit {
 
-  constructor() { }
+  items: MenuItem[];
 
-  ngOnInit(): void {
+  ngOnInit() {
+      this.items = [
+          {
+              label:'Add',
+              icon:'pi pi-plus-circle',
+              items:[
+                  {
+                      label:'New',
+                      icon:'pi pi-fw pi-plus',
+                      items:[
+                      {
+                          label:'Araba',
+                          icon:'pi pi-fw pi-plus',
+                          routerLink:"car/add"
+                      },
+                      {
+                          label:'Color',
+                          icon:'pi pi-fw pi-plus',
+                          routerLink:"color/add"
+                      },
+                      {
+                        label:'Brand',
+                        icon:'pi pi-fw pi-plus',
+                        routerLink:"brand/add"
+                    },
+
+
+                      ]
+                  },
+                  {
+                      label:'Update',
+                      icon:'pi pi-fw pi-undo',
+                      items:[
+                        {
+                          label:'Araba',
+                          icon:'pi pi-fw pi-plus',
+                          routerLink:"car/update"
+                      },
+                      {
+                          label:'Color',
+                          icon:'pi pi-fw pi-plus',
+                          routerLink:"color/update"
+                      },
+                      {
+                        label:'Brand',
+                        icon:'pi pi-fw pi-plus',
+                        routerLink:"brand/update"
+                    },
+                      ]
+                  },
+                  {
+                      separator:true
+                  },
+                  {
+                      label:'Export',
+                      icon:'pi pi-fw pi-external-link'
+                  }
+              ]
+          },
+          
+          {
+              label:'Users',
+              icon:'pi pi-android',
+              items:[
+                  {
+                      label:'New',
+                      icon:'pi pi-fw pi-user-plus',
+                      routerLink:"/"
+
+                  },
+                  {
+                      label:'Delete',
+                      icon:'pi pi-fw pi-user-minus',
+
+                  },
+                  {
+                      label:'Search',
+                      icon:'pi pi-fw pi-users',
+                      items:[
+                      {
+                          label:'Filter',
+                          icon:'pi pi-fw pi-filter',
+                          items:[
+                              {
+                                  label:'Print',
+                                  icon:'pi pi-fw pi-print'
+                              }
+                          ]
+                      },
+                      {
+                          icon:'pi pi-fw pi-bars',
+                          label:'List'
+                      }
+                      ]
+                  }
+              ]
+          }
+          
+          
+      ];
   }
 
 }
