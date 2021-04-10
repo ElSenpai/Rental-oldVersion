@@ -1,0 +1,108 @@
+<!-- <body class="text-center bg-light">
+    <main class="form-signin">
+      <form [formGroup]="loginForm">
+        <img class="mb-4" src="assets/img/123.png" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Giriş yap</h1>
+  
+        <div class="form-floating">
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">E-posta</label>
+        </div>
+        <div class="form-floating">
+          <input
+          formControlName="password"
+          
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Parola</label>
+        </div>
+  
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me" /> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" (click)="login()">
+          Giriş yap
+        </button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+      </form>
+    </main>
+  </body> -->
+  <!-- Modal -->
+  <!-- Button trigger modal -->
+
+  <!-- <button pButton pRipple type="button"  data-bs-target="#exampleModal1" icon="pi pi-user"   data-bs-toggle="modal"class="p-button-rounded p-button-info p-button-text"></button> -->
+  
+ <!-- Button trigger modal -->
+ <div class="btn-group ">
+  <button type="button" class="btn btn-danger dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+    Users
+  </button>
+  <ul class="dropdown-menu">
+    <i><a class="dropdown-item "data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Login</a></i>
+    <i><a class="dropdown-item "data-bs-toggle="modal" data-bs-target="#exampleModal2" href="#">Register    </a></i>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+ 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Giriş Yap</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="loginForm">
+           
+      
+            <div class="form-floating">
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+              <label for="floatingInput">E-posta</label>
+            </div>
+            <div class="form-floating">
+              <input
+              formControlName="password"
+                type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder="Password"
+              />
+              <label for="floatingPassword">Parola</label>
+            </div>
+      
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me" /> Remember me
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" (click)="login()">
+              Giriş yap
+            </button>
+            <app-register></app-register>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

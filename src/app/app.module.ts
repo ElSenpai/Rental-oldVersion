@@ -33,6 +33,9 @@ import { ColorAddComponent } from './components/color/color-add/color-add.compon
 import { ColorUpdateComponent } from './components/color/color-update/color-update.component';
 import { BrandAddComponent } from './components/brand/brand-add/brand-add.component';
 import { BrandUpdateComponent } from './components/brand/brand-update/brand-update.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+
 
 
 
@@ -62,6 +65,9 @@ import { BrandUpdateComponent } from './components/brand/brand-update/brand-upda
     ColorUpdateComponent,
     BrandAddComponent,
     BrandUpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+   
     
     
     
@@ -78,7 +84,7 @@ import { BrandUpdateComponent } from './components/brand/brand-update/brand-upda
     AccordionModule,
     ReactiveFormsModule,
     MenubarModule,
-    
+   
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     })

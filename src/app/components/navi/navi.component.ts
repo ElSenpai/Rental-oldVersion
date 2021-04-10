@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-
+import {DropdownModule} from 'primeng/dropdown';
+import {SplitButtonModule} from 'primeng/splitbutton';
 @Component({
   selector: 'app-navi',
   templateUrl: './navi.component.html',
   styleUrls: ['./navi.component.css']
 })
 export class NaviComponent implements OnInit {
-
+  
+    
   items: MenuItem[];
 
   ngOnInit() {
@@ -80,14 +82,16 @@ export class NaviComponent implements OnInit {
               icon:'pi pi-android',
               items:[
                   {
-                      label:'New',
+                      label:'Login',
                       icon:'pi pi-fw pi-user-plus',
-                      routerLink:"/"
+                      
+                      
 
                   },
                   {
-                      label:'Delete',
+                      label:'home',
                       icon:'pi pi-fw pi-user-minus',
+                      routerLink:"/"
 
                   },
                   {
